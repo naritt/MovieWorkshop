@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Movie>
+@{
+    ViewData["Title"] = "Movie Workshop";
+}
+
+<div class="row">
+    <div class="col-md-10">
+        <h5>Action</h5>
+    </div>
+    <div class="col-md-2 text-right">
+        <a asp-controller="Home" asp-action="Genres" asp-route-type="Action" class="btn btn-outline-dark">See more</a>
+    </div>
+</div>
+<hr />
+<div class="row">
+    @foreach(var item in Model.Where(m => m.Type.Name == "Action").Take(4))
+    {
+        <div class="col-md-3 d-flex align-items-stretch" style="margin-bottom: 5px;">
+            <div class="card">
+                <img src="@item.ImageUrl" class="card-img-top" />
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">@item.Description</p>
+                    <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id" class="btn btn-primary">View details</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<br/><br/>
+<div class="row">
+    <div class="col-md-10">
+        <h5>Drama</h5>
+    </div>
+    <div class="col-md-2 text-right">
+        <a asp-controller="Home" asp-action="Genres" asp-route-type="Drama" class="btn btn-outline-dark">See more</a>
+    </div>
+</div>
+<hr />
+<div class="row">
+    @foreach(var item in Model.Where(m => m.Type.Name == "Drama").Take(4))
+    {
+        <div class="col-md-3 d-flex align-items-stretch" style="margin-bottom: 5px;">
+            <div class="card">
+                <img src="@item.ImageUrl" class="card-img-top" />
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">@item.Description</p>
+                    <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id" class="btn btn-primary">View details</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<br/><br/>
+<div class="row">
+    <div class="col-md-10">
+        <h5>Comedy</h5>
+    </div>
+    <div class="col-md-2 text-right">
+        <a asp-controller="Home" asp-action="Genres" asp-route-type="Comedy" class="btn btn-outline-dark">See more</a>
+    </div>
+</div>
+<hr />
+<div class="row">
+    @foreach(var item in Model.Where(m => m.Type.Name == "Comedy").Take(4))
+    {
+        <div class="col-md-3 d-flex align-items-stretch" style="margin-bottom: 5px;">
+            <div class="card">
+                <img src="@item.ImageUrl" class="card-img-top" />
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">@item.Description</p>
+                    <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id" class="btn btn-primary">View details</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,48 @@
+@model Movie
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div class="row">
+    <div class="col-md-10">
+        <h5>@Model.Name</h5>
+    </div>
+    <div class="col-md-2 text-right">
+        <a asp-controller="Admin" asp-action="Management" class="btn btn-primary">Back</a>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <div class="text-center">
+            <img src="@Model.ImageUrl" class="rounded" />
+        </div>
+    </div>
+</div>
+<br /><br />
+<div class="row">
+    <div class="col-md-12">
+        <h5>Desctiption</h5>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <p>@Model.Description</p>
+    </div>
+</div>
+<br /><br />
+<div class="row">
+    <div class="col-md-12">
+        <h5>Trailer</h5>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <div class="text-center">
+            @Html.Raw(Model.TrailerUrl)
+        </div>
+    </div>
+</div>

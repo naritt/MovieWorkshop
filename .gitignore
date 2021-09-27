@@ -1,0 +1,13 @@
+# jetbrain rider
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+.idea
+
+# Mac
+.DS_Store
+
+# Visual
+.vs
